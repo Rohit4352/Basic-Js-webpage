@@ -43,7 +43,10 @@ async function filterData(){
     let resultstudents = data.filter((item)=>{
         let valuestr = searchstring.value.toLowerCase();
         let value = valuestr.trim();
-        if(value === `${item.last_name}`.toLowerCase() || value === `${item.first_name}`.toLowerCase()|| value === `${item.email}`.toLowerCase()){
+        // if(value === `${item.last_name}`.toLowerCase() || value === `${item.first_name}`.toLowerCase()|| value === `${item.email}`.toLowerCase()){
+        //     return true;
+        // }
+        if((`${item.last_name}`.toLowerCase()).includes(value) || (`${item.first_name}`.toLowerCase()).includes(value) || (`${item.email}`.toLowerCase()).includes(value)){
             return true;
         }
     })
